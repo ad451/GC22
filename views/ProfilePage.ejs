@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./components/head") %>
+    <body>
+        <%- include("components/Nav/topNav") %>
+        <div class="parallax-container valign-wrapper">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <div class="row center">
+                        <h5 class="header col s12 light">Your Registrations</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="parallax">
+                <img src="/images/background2.jpg" alt="background img 2" />
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <div class="row">
+                    <h4 class="center">Your Registrations</h4>
+                    <% if (eventList.length > 0) { %> <%
+                    eventList.forEach(function(event) { %>
+                    <div style="padding: 4px" class="col s6 m3">
+                        <h4
+                            class="z-depth-2 center flow-text"
+                            style="width: 100%; padding: 8px"
+                        >
+                            <%= event %>
+                        </h4>
+                    </div>
+                    <% }) %> <% } %>
+                </div>
+            </div>
+        </div>
+        <%- include("./components/Nav/bottomNav") %> <%-
+        include("./components/scripts") %>
+    </body>
+</html>

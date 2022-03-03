@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./components/head") %>
+    <body>
+        <%- include("components/Nav/topNav") %>
+
+        <div id="index-banner" class="parallax-container">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <br /><br />
+                    <h1 class="header center teal-text text-lighten-2">
+                        Event Registration
+                    </h1>
+                    <div class="row center">
+                        <h5 class="header col s12 light">
+                            View the complete list of GC'22 events and register
+                            for the ones you want to participate in
+                        </h5>
+                    </div>
+                    <div class="row center">
+                        <a
+                            href="http://materializecss.com/getting-started.html"
+                            id="download-button"
+                            class="btn-large waves-effect waves-light teal lighten-1"
+                            >Get Started</a
+                        >
+                    </div>
+                    <br /><br />
+                </div>
+            </div>
+            <div class="parallax">
+                <img src="/images/background1.jpg" alt="background img 1" />
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h4 class="center">Events</h4>
+                <div class="row">
+                    
+                    <% if (eventList.length > 0) { %> <%
+                    eventList.forEach(function(event) { %>
+                    <form
+                        method="POST"
+                        action="/<%= event %>"
+                        style="padding: 4px"
+                        class="col s6 m3"
+                    >
+                        <input
+                            type="submit"
+                            name="<%= event %>"
+                            value="<%= event %>"
+                            class="btn-large waves-effect waves-light teal lighten-1"
+                            style="width: 100%"
+                        />
+                    </form>
+                    <% }) %> <% } %>
+                </div>
+            </div>
+        </div>
+
+        <%- include("./components/Nav/bottomNav") %> <%-
+        include("./components/scripts") %>
+    </body>
+</html>
